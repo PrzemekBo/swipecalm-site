@@ -2,14 +2,14 @@
   color-scheme: light;
   --ink: #0f172a;
   --ink-soft: #334155;
-  --muted: #526175;
-  --line: #dbe3ec;
+  --muted: #64748b;
+  --line: #e2e8f0;
   --surface: #ffffff;
-  --background: #f8fafc;
-  --grouped: #f1f5f9;
-  --primary: #0ea5e9;
-  --primary-dark: #075985;
-  --secondary: #f97316;
+  --background: #ffffff;
+  --grouped: #f1f6fe;
+  --primary: #1b7df0;
+  --primary-dark: #0b5bc4;
+  --secondary: #1b7df0;
   --navy: #0f172a;
   --success: #22c55e;
   --content: 1160px;
@@ -513,6 +513,7 @@ summary:focus-visible {
 
 .support-intro img {
   width: min(100%, 320px);
+  height: auto;
   justify-self: center;
   aspect-ratio: 9 / 19.5;
   object-fit: cover;
@@ -747,4 +748,149 @@ summary:focus-visible {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+
+/* --- Unified header (matches the landing page header) --- */
+.site-header {
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand span {
+  color: var(--ink);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.brand em {
+  font-style: normal;
+  color: var(--primary);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.nav-links a {
+  color: var(--ink-soft);
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--ink);
+  background: rgba(15, 23, 42, 0.05);
+}
+
+.nav-links a[aria-current="page"] {
+  color: var(--ink);
+}
+
+.nav-links .nav-cta {
+  margin-left: 0.35rem;
+  background: var(--primary);
+  color: #ffffff;
+  font-weight: 650;
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+}
+
+.nav-links .nav-cta:hover,
+.nav-links .nav-cta:focus-visible {
+  background: var(--primary-dark);
+  color: #ffffff;
+}
+
+
+/* --- Light theme: primary CTA in brand blue --- */
+.primary-link,
+button.primary-link {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.primary-link:hover,
+.primary-link:focus-visible {
+  background: var(--primary-dark);
+  color: #ffffff;
+}
+
+.site-header {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+}
+
+.support-intro img,
+.screen img {
+  border-color: var(--surface);
+}
+
+.site-footer {
+  background: #ffffff;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.site-footer a {
+  color: var(--ink-soft);
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+  color: var(--ink);
+}
+
+
+/* --- Pixel-match the landing header (h-16, max-w-6xl, px-6) --- */
+.nav {
+  min-height: 64px;
+  height: 64px;
+  max-width: 1152px;
+  padding: 0 1.5rem;
+  gap: 1rem;
+}
+
+.brand {
+  gap: 0.625rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.brand img {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  box-shadow: 0 2px 8px rgba(27, 125, 240, 0.25);
+}
+
+.nav-links {
+  gap: 0.5rem;
+}
+
+.nav-links a {
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.nav-links .nav-cta {
+  margin-left: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+}
+
+
+.brand span,
+.nav-links a {
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+}
+
+.nav-links a {
+  line-height: 1.5;
 }
